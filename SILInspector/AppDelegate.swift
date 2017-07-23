@@ -126,7 +126,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTabViewDelegate {
 	}
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		// Insert code here to initialize your application
-		setFontSize(36)
+		setFontSize(24)
 		let textView = sourceView.documentView as! NSTextView
 		textView.isAutomaticQuoteSubstitutionEnabled = false
 		textView.isAutomaticDashSubstitutionEnabled = false
@@ -140,15 +140,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSTabViewDelegate {
 	func tabView(_ tabView: NSTabView, willSelect tabViewItem: NSTabViewItem?) {
 		let title = tabViewItem?.label
 		switch title {
-		case .some("SIL"):
+		case .some("Raw SIL"):
 			updateSIL()
-		case .some("Canonical"):
+		case .some("Canonical SIL"):
 			updateCanonical()
 		case .some("AST"):
 			updateAST()
 		case .some("Parse"):
 			updateParse()
-		case .some("IR"):
+		case .some("LLVM IR"):
 			updateIR()
 		case .some("Assembly"):
 			updateAsm()
